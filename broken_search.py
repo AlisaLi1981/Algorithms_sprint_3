@@ -1,6 +1,9 @@
 # ID 93421551
 
-def broken_search(nums, target) -> int:
+from typing import List
+
+
+def broken_search(nums: List[int], target: int) -> int:
     left, right = 0, len(nums) - 1
     while left <= right:
         mid = (left + right) // 2
@@ -19,6 +22,8 @@ def broken_search(nums, target) -> int:
     return -1
 
 
-def test():
-    arr = [19, 21, 100, 101, 1, 4, 5, 7, 12]
-    assert broken_search(arr, 5) == 6
+if __name__ == '__main__':
+    n = int(input())
+    target = int(input())
+    nums = [int(i) for i in input().split()]
+    print(broken_search(nums, target))
